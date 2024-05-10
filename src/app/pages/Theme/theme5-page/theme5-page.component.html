@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="text-dicoration">В данном задании вам будет необходимо решить словеснозаписанные примеры, и записать численный ответ.</div>
+    <div class="win">
+        <div class="win-bottom">
+            <div class="task" *ngFor="let question of quiz; let i = index">
+                <p>{{ question.question }}</p>
+                <div class="answer" *ngFor="let option of question.options; let j = index"
+                    [ngClass]="{'correct-answer': isSubmitted && option == question.userAnswer && question.isCorrect, 'wrong-answer': isSubmitted && option == question.userAnswer && !question.isCorrect}">
+                    <input type="text" [disabled]="isSubmitted" name="option{{i}}" [value]="option"
+                        [(ngModel)]="question.userAnswer">
+                    {{ option }}
+                    <br>
+                </div>
+            </div>
+
+        </div>
+        <button (click)="checkAnswer()"><p>Проверить</p></button>
+
+        <div class="answer-block" *ngIf="showResult">
+            <p [ngStyle]="{color: resultColor}">{{ resultMessage }}</p>
+        </div>
+        <div class="line"></div>
+    </div>
+
+</div>

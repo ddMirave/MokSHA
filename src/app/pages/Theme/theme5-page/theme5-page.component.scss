@@ -1,0 +1,89 @@
+.task p {
+    font-weight: 500;
+    width: 380px;
+  }
+  
+  .answer {
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+  
+    input {
+      width: 130px;
+  
+    }
+  }
+  
+  h2 {
+    color: blue;
+  }
+  
+  p {
+    font-weight: bold;
+  }
+  
+  .main {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background: url(../../../../assets/img/background.png);
+    background-size: cover;
+    padding: 5% 0;
+  
+    .text-dicoration {
+      padding: 10px;
+      background: #AC3146;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 20px;
+    }
+  
+    button {
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      background: #AC3146;
+      border-radius: 15px;
+      margin: 0 auto;
+  
+      p {
+        color: #fff;
+        font-size: 18px;
+        margin: 0 auto;
+      }
+    } 
+  
+    .win {
+      width: 700px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+  
+      .win-bottom {
+        // padding-left: 22%;
+        // background-color: #1f1f1f;
+        .task {
+          display: flex;
+          padding: 10px 0;
+          gap: 15px;
+          text-align: right;
+  
+        }
+      }
+      .answer-block {
+        margin-top: 50px;
+        width: 100%;
+  
+        p {
+          font-size: 22px;
+          width: 240px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  

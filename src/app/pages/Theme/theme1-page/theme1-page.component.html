@@ -1,0 +1,23 @@
+<div class="main">
+    <div class="text-dicoration">В данном задании вам будет необходимо среди однокоренных слов найти лишнее и отметить
+        его.</div>
+    <div class="win">
+        <div class="task" *ngFor="let question of quiz; let i = index">
+            <p>{{ question.question }}</p>
+            <div class="answer" *ngFor="let option of question.options; let j = index"
+                [ngClass]="{'correct-answer': isSubmitted && option == question.userAnswer && question.isCorrect, 'wrong-answer': isSubmitted && option == question.userAnswer && !question.isCorrect}">
+                <input type="radio" [disabled]="isSubmitted" name="option{{i}}" [value]="option"
+                    [(ngModel)]="question.userAnswer">
+                {{ option }}<br>
+            </div>
+        </div>
+
+        <button (click)="checkAnswer()">
+            <p>Проверить</p>
+        </button>
+    
+        <div class="answer-block" *ngIf="showResult">
+            <p [ngStyle]="{color: resultColor}">{{ resultMessage }}</p>
+        </div>
+    </div>
+</div>
